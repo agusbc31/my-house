@@ -35,6 +35,14 @@ public class Picture
         wall.changeSize(120);
         wall.makeVisible();
         
+        Square ground = new Square();
+        ground.makeVisible();
+        ground.changeColor("green");
+        ground.changeSize(600);
+        ground.moveHorizontal(-400);
+        ground.moveVertical(120);
+        
+        
         window = new Square();
         window.changeColor("black");
         window.moveHorizontal(-120);
@@ -54,11 +62,11 @@ public class Picture
         sun.moveVertical(-40);
         sun.changeSize(80);
         sun.makeVisible();
+        sun.slowMoveVertical(300);
         
         moon=new Circle();
         moon.makeVisible();
         moon.moveHorizontal(-175);
-      
         moon.changeSize(40);
         moon.changeColor("magenta");
     }
