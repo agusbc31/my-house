@@ -29,7 +29,7 @@ public class Picture
      */
     public void draw()
     {
-        wall = new Square();
+     wall = new Square();
         wall.moveHorizontal(-140);
         wall.moveVertical(20);
         wall.changeSize(120);
@@ -41,7 +41,6 @@ public class Picture
         ground.changeSize(600);
         ground.moveHorizontal(-400);
         ground.moveVertical(120);
-        
         
         window = new Square();
         window.changeColor("black");
@@ -64,18 +63,50 @@ public class Picture
         sun.makeVisible();
         sun.slowMoveVertical(300);
         
-        moon=new Circle();
+        moon = new Circle();
         moon.makeVisible();
-        moon.moveHorizontal(-175);
-        moon.changeSize(40);
         moon.changeColor("magenta");
+        moon.changeSize(40);
+        moon.moveHorizontal(-175);
     }
+    public void amanecer()
+    {
+        wall = new Square();
+        wall.moveHorizontal(-140);
+        wall.moveVertical(20);
+        wall.changeSize(120);
+        wall.makeVisible();
+        
+        window = new Square();
+        window.changeColor("black");
+        window.moveHorizontal(-120);
+        window.moveVertical(40);
+        window.changeSize(40);
+        window.makeVisible();
+
+        roof = new Triangle();  
+        roof.changeSize(60, 180);
+        roof.moveHorizontal(20);
+        roof.moveVertical(-60);
+        roof.makeVisible();
+        
+        moon.makeInvisible();
+
+        sun = new Circle();
+        sun.changeColor("yellow");
+        sun.moveHorizontal(100);
+        sun.moveVertical(300);
+        sun.changeSize(80);
+        sun.makeVisible();
+        sun.slowMoveVertical(-350);
+    
+    }
+    
 
     /**
      * Change this picture to black/white display
      */
-    public void setBlackAndWhite()
-    {
+    public void setBlackAndWhite(){
         if (wall != null)   // only if it's painted already...
         {
             wall.changeColor("black");
